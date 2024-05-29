@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style_aadhar.css">
+
+</head>
+<body>
+    <h3>Note: This page is to verify whether the user belongs to this village or not. Data is fed at the backend. For eg. use 8858184979656900</h3>
+    <div class="aadhar-info"> 
+        <form action="" method="post">
+        {% csrf_token %}
+            <label for="">Enter aadhar details</label><br>
+            <input type="number" name="aadhar" id="" placeholder="xxxx-xxxx-xxxx-xxxx" required minlength="16" maxlength="16" pattern="\d{16}" title="Enter 16 digits Aadhar Number" ><br><br>
+            <button type="submit">Search</button><br>
+        </form>
+    </div>
+</body>
+</html>

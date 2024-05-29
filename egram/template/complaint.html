@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+    <link rel="stylesheet" href="/static/css/style_complaint.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Raise a Complaint</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="complaint-type">Type of Complaint:</label>
+                <select name="complaint-type" id="complaint-type">
+                    <option value="">Select Complaint Type</option>
+                    <option value="sanitation">Sanitation</option>
+                    <option value="road-repair">Road Repair</option>
+                    <option value="water-supply">Water Supply</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="complaint-location">Location of Complaint:</label>
+                <input type="text" id="complaint-location" name="complaint-location" required>
+            </div>
+            <div class="form-group">
+                <label for="complaint-date-time">Date and Time of Incident:</label>
+                <input type="datetime-local" id="complaint-date-time" name="complaint-date-time" required>
+            </div>
+            <div class="form-group">
+                <label for="complaint-description">Description of Complaint:</label>
+                <textarea id="complaint-description" name="complaint-description" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="complaint-attachment">Upload Supporting Documents:</label>
+                <input type="file" id="complaint-attachment" name="complaint-attachment"
+                    accept=".jpg, .jpeg, .png, .pdf"><br>
+                <small>Supported formats: JPG, JPEG, PNG, PDF</small>
+            </div>
+            <div class="form-group">
+                <label for="complaint-consent">Consent to share information:</label>
+                <input type="checkbox" id="complaint-consent" name="complaint-consent" required>
+                <span>I consent to share my information with the authorities.</span>
+            </div>
+            <button type="submit">Submit Complaint</button>
+        </form>
+    </div>
+</body>
+
+</html>

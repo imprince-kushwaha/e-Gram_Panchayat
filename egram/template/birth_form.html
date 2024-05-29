@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth</title>
+    <link rel="stylesheet" href="/static/css/style_birthform.css">
+    <link rel="shortcut icon" href="/static/media/birth-certificate.png" type="image/x-icon">
+
+
+</head>
+
+<body>
+    <section>
+        <div class="title"><h1><b>Birth Registration Form</b></h1></div>
+        <div class="container">
+            <div><span class="required">*</span><u>Mandatory Fields</u></div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Date of Birth<span class="required">*</span></span>
+                        <input type="date" name="dob" id="" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Name of Child</span>
+                        <input type="text" name="name" id="" pattern="[A-Za-z]+" title="Only alphabets are allowed" required>
+                    </div>
+                    <div class="gender_details">
+                        <span class="gender-title">Gender<span class="required">*</span></span>
+                        <select name="gender" id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Father's Name<span class="required">*</span></span>
+                        <input type="text" name="fname" id="" pattern="[A-Za-z ]+" title="Only alphabets are allowed" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mother's Name<span class="required">*</span></span>
+                        <input type="text" name="mname" id="" pattern="[A-Za-z ]+" title="Only alphabets are allowed" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">District Name<span class="required">*</span></span>
+                        <input type="text" name="dname" id="" pattern="[A-Za-z ]+" title="Only alphabets are allowed" required>
+                    </div>
+                    <div class="placeofbirth">
+                        <span class="place">Place of Birth<span class="required">*</span></span>
+
+                        <select name="place" id="">
+                            <option value="home">Home</option>
+                            <option value="government hospital">Government Hospital</option>
+                            <option value="private hospital">Private Hospital</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Birth Place Address<span class="required">*</span></span>
+                        <input type="text" name="baddress" id="" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Current Address<span class="required">*</span></span>
+                        <input type="text" name="caddress" id=""  required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Permanent Address<span class="required">*</span></span>
+                        <input type="text" name="paddress" id="" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email<span class="required">*</span></span>
+                        <input type="email" name="email" id="" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mobile Number<span class="required">*</span></span>
+                        <input type="number" name="mobile" id="" required>
+                    </div>
+                    <div class="onlyadditionalinfo">
+
+                        <div class="title">
+                            <hr><b>
+                                <center>Additional Details</center>
+                            </b>
+                        </div><br>
+                        <div class="additional">
+                            <span class="mot-edu">Mother's Education</span>
+                            
+                            <select name="motedu" id="">
+                                <option value="literate">Literate</option>
+                                <option value="illiterate">Illiterate</option>
+
+                            </select>
+                        </div>
+                        <div class="additional">
+                            <span class="mot-occ">Mother's Occupation</span>
+                            
+                            <select name="motocc" id="">
+                                <option value="housewife">House-Wife</option>
+                                <option value="employee">Employee</option>
+                                <option value="others">Others</option>
+
+                            </select>
+                        </div>
+                        <div class="additional">
+                            <span class="fat-edu">Father's Education</span>
+                        
+                            <select name="fatedu" id="">
+                                <option value="literate">Literate</option>
+                                <option value="illiterate">Illiterate</option>
+                            </select>
+                        </div>
+                        <div class="additional">
+                            <span class="fat-occ">Father's Occupation</span>
+                            
+                            <select name="fatocc" id="">
+                                <option value="employee">Employee</option>
+                                <option value="unemployed">Unemployed</option>
+                                <option value="others">Others</option>
+
+                            </select>
+                        </div><br>
+                        <div class="additional">
+                            <span class="details">Mother's Age at Marriage</span>
+                            <input type="number" name="mar_age" id="" required>
+                        </div>
+                        <div class="additional">
+                            <span class="details">Mother's Age at Delivery</span>
+                            <input type="number" name="del_age" id="" required>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <!-- <div class="input-box">
+                        <span class="details">Place</span>
+                        <input type="text" name="" id="" required>
+                    </div> -->
+                    <div class="input-box">
+                        <span class="details">Date</span>
+                        <input type="date" name="date" id="" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Applicant Name</span>
+                        <input type="text" name="app_name" id="" pattern="[A-Za-z ]+" title="Only alphabets are allowed" required>
+                    </div>
+
+                </div>
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>

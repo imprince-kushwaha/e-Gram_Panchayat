@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style_birthcert.css">
+    <link rel="shortcut icon" href="/static/media/birth-certificate.png" type="image/x-icon">
+
+
+</head>
+
+<body>
+    <div class="certificate">
+        {% for i in birth_data %}
+        <div class="header">
+            <div class="title">BIRTH CERTIFICATE</div>
+        </div>
+        <div class="section">
+            <div class="person-info">
+                This is to certify that following data has been collected from record
+                of Birth as filled.
+            </div>
+        </div>
+        <div class="section">
+            <div class="person-info">
+                Name: {{ i.name }}
+            </div>
+        </div>
+        <div class="section">
+            <div class="person-info">
+                Gender: {{ i.gen }}
+            </div>
+        </div>
+        <div class="section">
+            <div class="person-info">
+                Father's Name: {{ i.f_name }}
+            </div>
+        </div>
+        <div class="section">
+            <div class="person-info">
+                Mother's Name: {{ i.m_name }}
+            </div>
+        </div>
+        <div class="section">
+            <div class="person-info">
+                District: {{ i.dis_name }}
+            </div>
+        </div>
+        <div class="section">
+            <div class="person-info">
+                Address: {{ i.p_address }}
+            </div>
+        </div>
+        <div class="certified">
+            <div class="person-info">Certified by: <img src="/static/media/sign.png" alt="not found"></div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="print">
+        <button class="button" onclick="handlePrint()">Print</button>
+    </div>
+    <script>
+        const handlePrint = () => { var actContents = document.body.innerHTML; document.body.innerHTML = actContents; window.print(); }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates</title>
+    <link rel="stylesheet" href="/static/css/style_mycertificate.css">
+</head>
+
+<body>
+    <section class="mycert-nav">
+        <div class="mycert">
+            <div class="heading">
+                <h1>
+                    <center><u>My Certificates</u></center></center>
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="mycert-show">
+        <div class="cert-heading">Birth Certificates</div>
+        {% for i in my_birth %}
+        <div class="mycertificate">
+
+            <div class="cmn">Name: {{ i.name }} </div>
+            <div class="cmn">Date of Issue: {{ i.date }}</div>
+            <form action="{% url 'birth_cert' %}" method="post">
+                {% csrf_token %}
+                <input type="text" value="{{ i.id }}" name="view-certificate" hidden>
+                <button type="submit"> View Certificate</button>
+            </form>
+        </div>
+        {% endfor %}
+    </section><br><br>
+    <section class="mycert-show">
+        <div class="cert-heading">Death Certificates</div>
+        {% for x in my_death %}
+        <div class="mycertificate">
+            <div class="cmn">Name: {{ x.deceased_name}}</div>
+            <div class="cmn">Date of Issue:{{ x.date_of_issue }} </div>
+            <form action="{% url 'death_cert' %}" method="post">
+                {% csrf_token %}
+                <input type="text" value="{{ x.id }}" name="view-certificate" hidden>
+                <button type="submit"> View Certificate</button>
+            </form>
+        </div>
+        {% endfor %}
+    </section>
+</body>
+
+</html>

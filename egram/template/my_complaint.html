@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Complaint</title>
+    <style>
+        h1{
+            text-shadow: 1px 1px 1px black;
+        }
+        .comp-section{
+            height: 80vh;
+            width: 98vw;
+            
+            border: 2px solid black;
+            box-shadow: 1rem 1rem 1rem grey;
+        }
+        table{
+            width: 100%;
+        }
+        th,td{
+            padding: 10px;
+        }
+        .heading th{
+            font-size: 25px;
+            font-weight: 700;
+        }
+        .complaints th{
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>My Complaints</h1>
+    <div class="comp-section">
+        <table >
+            <tr class="heading">
+                <th>S.No</th>
+                <th>Problem</th>
+                <th>Complaint Date</th>
+                <th>Status</th>
+            </tr>
+            
+            <tr class="complaints">
+                {% for i in compl_info %}
+                <th>{{ i.id }}</th>
+                <th> {{ i.compl_type }}</th>
+                <th>{{ i.date_time }}</th>
+                <th>{{ i.status }}</th>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

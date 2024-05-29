@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death</title>
+    <link rel="stylesheet" href="/static/css/style_deathform.css">
+    <link rel="shortcut icon" href="/static/media/death-certificate.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <section>
+
+            <div class="title"><h2><center>Death Registration Form</center></h2></div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="container">
+
+                    <div class="info">
+                        <div class="heading">Applicant/Informer Details</div>
+                        <div class="input-box">
+                            <span class="details">Name*</span>
+                            <input type="text" name="name" id="" pattern="[A-Za-z ]+" title="Only alphabets are allowed" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Relation with Deceased</span>
+                        <input type="text" name="dec_rel" id="" pattern="[A-Za-z ]+" title="Only alphabets are allowed" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mobile Number</span>
+                        <input type="number" name="dec_mob" id="">
+                    </div>
+                </div>
+                <hr>
+                <div class="heading">Deceased Details</div>
+                <div class="deceased-details">
+                    <div class="input-box">
+                        <span class="details">Date of Death*</span>
+                        <input type="date" name="dod" id="">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Deceased Name*</span>
+                        <input type="text" name="dec_name" id="" pattern="[A-Za-z ]+" title="Only alphabets are allowed" required>
+                    </div>
+                    <div class="gender_details">
+                        <span class="gender-title">Gender<span class="required">*</span></span>
+                        <select name="gender" id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="others">Others</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Father's Name*</span>
+                        <input type="text" name="dec_fat" id="" pattern="[A-Za-z ]+" title="Only alphabets are allowed" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Mother's Name*</span>
+                        <input type="text" name="dec_mot" id="" pattern="[A-Za-z ]+" title="Only alphabets are allowed" required>
+                    </div>
+                    <div class="religion">
+                        <span class="religion-title">Religion<span class="required">*</span></span>
+                        <select name="rel" id="religion">
+                            <option value="hindu">Hindu</option>
+                            <option value="muslim">Muslim</option>
+                            <option value="shikh">Shikh</option>
+                            <option value="christian">Christian</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Age at Death*</span>
+                        <input type="number" name="dec_death" id="">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Actual Cause of Death* </span>
+                        <!-- <input type="text" name="" id=""> -->
+                        <textarea name="dec_cause" id="" cols="33" rows="5"></textarea>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Permanent Address of Deceased*</span>
+                        <input type="text" name="dec_add" id="">
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    
+    </section>
+</body>
+
+</html>
