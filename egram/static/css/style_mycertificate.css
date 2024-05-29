@@ -1,0 +1,46 @@
+.heading {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.cert-heading {
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+.mycertificate {
+    display: flex;
+    margin: 20px;
+    height: 5rem;
+    /* align-items: center; */
+    box-shadow: 0.5rem 0.5rem 0.5rem grey;
+}
+
+.cmn {
+    /* height: 100%; */
+    padding: 1.5rem;
+    border: 2px solid black;
+    font-size: 1.3rem;
+    width: 33%;
+}
+form{
+    
+    border: 2px solid black;
+    font-size: 1.3rem;
+    width: 33%;
+}
+
+form input{
+    border: none;
+}
+button {
+    float: right;
+    
+    background: #fff;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    margin: 1.5rem 8rem 4rem 2rem;
+}
+button:hover{
+    background: #a0a4a9;
+}
